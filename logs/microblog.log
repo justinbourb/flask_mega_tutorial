@@ -1,79 +1,50 @@
-2018-01-02 14:15:17,469 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:39]
-2018-01-02 14:15:28,515 ERROR: Exception on /edit_profile [POST] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
+2018-01-06 13:17:11,439 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:41]
+2018-01-06 13:17:18,480 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:41]
+2018-01-06 13:19:32,622 ERROR: Exception on /user/john [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
-    context)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 507, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.IntegrityError: UNIQUE constraint failed: user.username
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
-    raise value
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
     rv = self.dispatch_request()
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/home/jb/git_local/microblog/app/routes.py", line 87, in edit_profile
-    db.session.commit()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/orm/scoping.py", line 153, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 937, in commit
-    self.transaction.commit()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 461, in commit
-    self._prepare_impl()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 441, in _prepare_impl
-    self.session.flush()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2237, in flush
-    self._flush(objects)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2363, in _flush
-    transaction.rollback(_capture_exception=True)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/util/langhelpers.py", line 66, in __exit__
-    compat.reraise(exc_type, exc_value, exc_tb)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 187, in reraise
-    raise value
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2327, in _flush
-    flush_context.execute()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 391, in execute
-    rec.execute(self)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 556, in execute
-    uow
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 177, in save_obj
-    mapper, table, update)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 768, in _emit_update_statements
-    execute(statement, multiparams)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 948, in execute
-    return meth(self, multiparams, params)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/sql/elements.py", line 269, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1060, in _execute_clauseelement
-    compiled_sql, distilled_params
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
-    context)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
-    exc_info
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 186, in reraise
-    raise value.with_traceback(tb)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
-    context)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 507, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username [SQL: 'UPDATE user SET username=?, about_me=? WHERE user.id = ?'] [parameters: ('susan', 'Now let me tell you about John.', 2)] (Background on this error at: http://sqlalche.me/e/gkpj)
-2018-01-02 18:42:24,660 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:42]
-2018-01-02 19:40:40,601 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:42]
-2018-01-02 19:40:50,702 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:42]
-2018-01-02 19:46:49,261 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:42]
-2018-01-02 21:02:34,310 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:42]
-2018-01-02 21:12:26,046 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:42]
+  File "/home/jb/git_local/microblog/app/routes.py", line 73, in user
+    user = User.query.filter_by(username=username).first_or_404()
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_sqlalchemy/__init__.py", line 427, in first_or_404
+    abort(404)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1512, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1471, in handle_http_exception
+    return handler(e)
+  File "/home/jb/git_local/microblog/app/errors.py", line 6, in not_found_error
+    return render_template('404.html'), 404
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/templating.py", line 133, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/templating.py", line 57, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/templating.py", line 85, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: 404.html
+2018-01-07 08:25:19,637 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:41]
+2018-01-07 08:29:34,334 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:41]
