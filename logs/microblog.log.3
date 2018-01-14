@@ -1,4 +1,4 @@
-2018-01-08 18:55:48,539 ERROR: Exception on /index [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
+2018-01-08 20:59:29,310 ERROR: Exception on /user/susan [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,8 +14,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/home/jb/git_local/microblog/app/routes.py", line 28, in index
-    return render_template('index.html', title='Home', form=form, posts=posts)
+  File "/home/jb/git_local/microblog/app/routes.py", line 91, in user
+    next_url=next_url, prev_url=prev_url)
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/templating.py", line 134, in render_template
     context, ctx.app)
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/templating.py", line 116, in _render
@@ -26,16 +26,27 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/home/jb/git_local/microblog/app/templates/index.html", line 1, in top-level template code
+  File "/home/jb/git_local/microblog/app/templates/user.html", line 1, in top-level template code
     {% extends "base.html" %}
   File "/home/jb/git_local/microblog/app/templates/base.html", line 32, in top-level template code
     {% block content %}{% endblock %}
-  File "/home/jb/git_local/microblog/app/templates/index.html", line 9, in block "content"
-    {{ for.post.label }}<br>
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'for' is undefined
-2018-01-08 18:55:56,428 ERROR: Exception on /index [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
+  File "/home/jb/git_local/microblog/app/templates/user.html", line 26, in block "content"
+    {% include '_posts.html' %}
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/templating.py", line 57, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/templating.py", line 85, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: _posts.html
+2018-01-08 21:00:25,191 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:43]
+2018-01-08 21:01:15,864 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:43]
+2018-01-08 21:01:49,408 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:43]
+2018-01-09 13:35:03,748 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:45]
+2018-01-09 18:28:51,645 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:45]
+2018-01-09 19:59:54,534 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:45]
+2018-01-09 20:02:01,686 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:45]
+2018-01-09 20:03:29,432 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:45]
+2018-01-09 20:03:36,259 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:45]
+2018-01-09 20:03:50,009 ERROR: Exception on /reset_password_request [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -49,10 +60,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/jb/git_local/microblog/app/routes.py", line 28, in index
-    return render_template('index.html', title='Home', form=form, posts=posts)
+  File "/home/jb/git_local/microblog/app/routes.py", line 169, in reset_password_request
+    return render_template('reset_password_request.html', title='Reset Password', form=form)
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/templating.py", line 134, in render_template
     context, ctx.app)
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/templating.py", line 116, in _render
@@ -63,53 +72,47 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/home/jb/git_local/microblog/app/templates/index.html", line 1, in top-level template code
+  File "/home/jb/git_local/microblog/app/templates/reset_password_request.html", line 1, in top-level template code
+    {% extends "base.hml" %}
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/templating.py", line 57, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/templating.py", line 85, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: base.hml
+2018-01-09 20:05:24,280 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:45]
+2018-01-09 20:05:27,088 ERROR: Exception on /reset_password_request [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/jb/git_local/microblog/app/routes.py", line 169, in reset_password_request
+    return render_template('reset_password_request.html', title='Reset Password', form=form)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/jb/git_local/microblog/app/templates/reset_password_request.html", line 1, in top-level template code
     {% extends "base.html" %}
   File "/home/jb/git_local/microblog/app/templates/base.html", line 32, in top-level template code
     {% block content %}{% endblock %}
-  File "/home/jb/git_local/microblog/app/templates/index.html", line 9, in block "content"
-    {{ for.post.label }}<br>
+  File "/home/jb/git_local/microblog/app/templates/reset_password_request.html", line 6, in block "content"
+    {{ from.hidden_tag() }}
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/environment.py", line 430, in getattr
     return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'for' is undefined
-2018-01-08 18:56:49,022 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:43]
-2018-01-08 19:05:32,363 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:43]
-2018-01-08 20:01:51,616 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:43]
-2018-01-08 20:02:14,244 ERROR: Exception on /explore [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
-    raise value
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/jb/git_local/microblog/app/routes.py", line 136, in explore
-    page, app.config['POSTS_PER_PAGE'], FALSE)
-NameError: name 'FALSE' is not defined
-2018-01-08 20:02:15,716 ERROR: Exception on /explore [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
-    raise value
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/jb/git_local/microblog/app/routes.py", line 136, in explore
-    page, app.config['POSTS_PER_PAGE'], FALSE)
-NameError: name 'FALSE' is not defined
+jinja2.exceptions.UndefinedError: 'from' is undefined
+2018-01-09 20:08:50,208 INFO: Microblog startup [in /home/jb/git_local/microblog/app/__init__.py:45]
